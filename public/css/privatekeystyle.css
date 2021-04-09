@@ -1,0 +1,69 @@
+
+html,body{
+    background: #00af66;
+    height:100%;
+    background: radial-gradient(ellipse at  top , #1480c9  0%,#051363 60%),  no-repeat 0 0 / cover;
+      color: #fff;
+      background-attachment: fixed; 
+  background-size: cover;
+  display: grid;
+  }
+  
+  
+  a {
+    text-decoration: none;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    transition: all .25s ease;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    letter-spacing: 0.5mm;
+    margin-top: 8px;
+    
+  }
+
+
+  
+  .container {
+    width: 600px;
+    height: 600px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    margin: auto;
+    vertical-align: top;
+    margin-top: 50px;
+  }
+  
+  .container:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+    filter: blur(75px);
+    margin: -20px;
+  }
+
+  .slideimg
+  {
+    margin: auto;
+    margin-top: 5%;
+    width: 600px;
+    height: 400px;
+  }
+
+  .download
+  {
+    margin: auto;
+    width: 240px;
+    height: 160px;
+    margin-left: 6%;
+  }

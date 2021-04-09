@@ -1,0 +1,80 @@
+html, body
+{
+    height:100%;
+    overflow: hidden;
+    
+}
+body
+{
+  
+  text-align: center;  
+    margin: 0;
+    padding: 0;
+    background: #00af66;
+    background: radial-gradient(ellipse at  top , #1480c9  0%,#051363 60%),  no-repeat 0 0 / cover;
+  
+  color: #fff;
+}
+.header
+{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+width: 50%;
+height: 50%;
+}
+.headline
+{
+  font-family: 'Merienda', cursive;
+		font-size: 12pt;
+		font-weight: 400;
+    color: white;
+    vertical-align: top;
+}
+
+.start
+{
+  font-family: 'Poiret One', cursive;
+  letter-spacing: 2px;
+		font-size: 10pt;
+		font-weight: 100;
+    color: white;
+    vertical-align: top;
+}
+.biothumb
+{
+margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+#biom
+{
+  animation: slide 2s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+#logo
+{
+  
+  margin-top: 10%;
+  animation: zoom 0.3s  linear;
+}
+
+@keyframes slide{
+from{
+  transform: rotateX(0deg);
+}
+to{
+  transform: rotateX(90deg);
+}
+}
+
+@keyframes zoom
+{
+  from{
+    transform: scale(10);
+  }
+  to{
+    transform: scale(1);
+  }
+}
