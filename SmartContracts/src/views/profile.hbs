@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/profilestyle.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="home page-template page-template-homepage page-template-homepage-php page page-id-10">
+
+
+<header id="top" class="green-bg">
+	<div class="inner vwide center medium">
+		<ul class="nav nav-left clean ilb">
+			<li class="cnproject">
+	<a href="/dashboard">
+		
+		<span>Home</span>
+	</a>
+</li><li class="projects">
+	<a href="/projects">
+		<span>Projects</span>
+	</a>
+</li>	</ul>
+		<a class="logo" >
+						<img src="./Images/logo.svg" alt="LOGO" class="full" />
+					</a>
+		<ul class="nav nav-right clean ilb">
+	<li class="faq-nav">
+	<a href="/requests">
+		<span>Requests</span>
+	</a>
+</li><li class="login-nav">
+	<a href="/profile">
+		<span>Profile</span>
+		
+	</a>
+</li>	</ul>
+		
+		
+	</div>
+</header>
+<div class="container">	
+	<span class="material-icons badge">badge</span>
+	<div id="name">Welcome, {{name}}</div>
+	<span class="material-icons id">
+perm_identity
+</span>		
+	<div id="username"> {{username}}</div>
+	<span class="material-icons key">
+vpn_key
+</span>
+	<div id="publickey">
+		<textarea id="area" readonly="readonly" rows="15" cols="76">{{publickey}}</textarea>
+</div>				
+</div>
+</body>
+</html>

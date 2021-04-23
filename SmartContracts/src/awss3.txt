@@ -1,0 +1,30 @@
+const AWS = require('aws-sdk');
+
+const s3 = new AWS.S3({
+    accessKeyId: "ASIA4PJ4XTJYMBHAEC2Y",
+    secretAccessKey: "Z3zVV31jEJT8eK5K5VaAV2bntL0oPURLMS/nDNyE"
+    });
+
+    
+const uploadFile = (filename) => {
+    const fileContent = fs.readFileSync(filename);
+    const params = {
+       Bucket: 'docsstoragesecured',
+       Key: 'PERT.PNG',
+       Body: fileContent,
+       ContentType: "image/PNG",
+    }
+     
+    s3.upload(params,(err,data)=>{
+       if(err)
+       {
+          console.log(err);
+       }
+       else
+       {
+          console.log("File Uploaded Successfully", data.Location);
+       }
+    }
+    );
+    }
+ uploadFile('PERT.PNG');

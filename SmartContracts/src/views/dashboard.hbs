@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/dashboardstyle.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="home page-template page-template-homepage page-template-homepage-php page page-id-10">
+
+
+<header id="top" class="green-bg">
+	<div class="inner vwide center medium">
+		<ul class="nav nav-left clean ilb">
+			<li class="cnproject">
+	<a href="#">
+		
+		<span>Home</span>
+	</a>
+</li><li class="projects">
+	<a href="/projects">
+		<span>Projects</span>
+	</a>
+</li>	</ul>
+		<a class="logo" >
+						<img src="./Images/logo.svg" alt="LOGO" class="full" />
+					</a>
+		<ul class="nav nav-right clean ilb">
+	<li class="faq-nav">
+	<a href="/requests">
+		<span>Requests</span>
+	</a>
+</li><li class="login-nav">
+	<a href="/profile">
+		<span>Profile</span>
+		
+	</a>
+</li>	</ul>
+		
+		
+	</div>
+</header>
+<div class="container">
+	<div class="slider">
+      <div class="slides">
+        <!--radio buttons start-->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <!--radio buttons end-->
+        <!--slide images start-->
+        <div class="slide first">
+          <img src="./Images/1.svg" alt="" class="slideimg img1">
+        </div>
+        <div class="slide">
+          <img src="./Images/2.svg" alt="" class="slideimg img2">
+        </div>
+        <div class="slide">
+          <img src="./Images/3.svg" alt="" class="slideimg img3">
+        </div>
+        <div class="slide">
+          <img src="./Images/4.svg" alt="" class="slideimg img4">
+        </div>
+        <!--slide images end-->
+        <!--automatic navigation start-->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+        <!--automatic navigation end-->
+      </div>
+      <!--manual navigation start-->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+      <!--manual navigation end-->
+    </div>
+    <!--image slider end-->
+
+    <script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 4){
+        counter = 1;
+      }
+    }, 5000);
+    </script>
+					
+</div>
+</body>
+</html>

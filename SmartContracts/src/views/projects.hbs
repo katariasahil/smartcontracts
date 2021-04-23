@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/projectsstyle.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body class="home page-template page-template-homepage page-template-homepage-php page page-id-10">
+
+
+<header id="top" class="green-bg">
+	<div class="inner vwide center medium">
+		<ul class="nav nav-left clean ilb">
+			<li class="cnproject">
+	<a href="/dashboard">
+		
+		<span>Home</span>
+	</a>
+</li><li class="projects">
+	<a href="/projects">
+		<span>Projects</span>
+	</a>
+</li>	</ul>
+		<a class="logo" >
+						<img src="./Images/logo.svg" alt="LOGO" class="full" />
+					</a>
+		<ul class="nav nav-right clean ilb">
+	<li class="faq-nav">
+	<a href="/requests">
+		<span>Requests</span>
+	</a>
+</li><li class="login-nav">
+	<a href="/profile">
+		<span>Profile</span>
+		
+	</a>
+</li>	</ul>
+		
+		
+	</div>
+</header>
+
+
+<div class="leftcontainer">
+<script>
+	let members = [{{members}}];
+	let files = [{{files}}];
+	</script>
+<div class="container cnp">	
+	<div class="form-container sign-in-container">
+                 <form id="newp" action="/newproject" method="post">
+                     <h1>New Project</h1>
+                     <input type="text" placeholder="Project Name" required name="projectname"  />
+                     <button>Create</button>
+
+                 </form>
+             </div>  
+			 <div class="form-container sign-in-container">
+                  <h1 class="enp" >Enrolled Projects</h1>
+				  <div class="enrplist">
+					  
+					  {{#each links}}
+					  <a  class="enrp" href="/projects?pid={{ this.projecturl }}">{{this.projectname}}</a>
+					  {{/each}}
+				  
+                     </div>
+             </div>         	
+</div>
+<div class="container prolist">	
+	
+	       	{{#if members}}
+			   <div class="container projectheader">
+				   <div class="headerstyle">	
+		<h1 class="projectname">{{projectname}}</h1>
+		<h1 hidden class="projectname">{{projecturl}}</h1>
+		</div>
+		<div class="membersicon">
+			
+		<button alt="upload" onclick="upload()"><span class="material-icons upload">cloud_upload</span>
+		<button onclick="documents()"><span class="material-icons pending">pending_actions</span></button>
+		<button onclick="addmember()"><span class="material-icons add ">person_add</span></button>
+		<button onclick="showmembers()"><span class="material-icons member ">groups</span></button>
+		<button onclick="more()"><span class="material-icons more ">more_vert</span></button>
+		</div>
+		</div>
+		<div id="more">
+							<h1>More Options</h1>		
+		</div>
+
+		<div class="filelist" id="docs">
+			<h1 class="space"></h1>
+			
+			
+			{{#each files}}
+					  {{#if this.pending}}
+					  <h1 class="filename"><span class="material-icons requested">more_time</span> &ensp; {{this.filename}}</h1> 
+					  {{else}}
+					 <a class="filelink" href="/file?hash={{this.filehash}}"> <h1 class="filename"><span class="material-icons done">cloud_done</span> &ensp; {{this.filename}}</h1> 
+</a>
+					  
+					  {{/if}}
+
+					  {{/each}}
+		</div>
+		<div class="memberlist" id="members">
+			<h1 class=""></h1>
+			<h1 class=""></h1>
+					  {{#each members}}
+					  
+					  <h1 class="membersname"> <span class="material-icons people">person</span> {{this.membername}}</h1> <h1 id="email">{{this.memberusername}}   </h1>
+					  {{/each}}
+        </div>
+		<div id = "add" class="add-container">
+                 <form id="addme" action="/addmember" method="post">
+                     
+                     <input id="minput" type="email" placeholder="Username" required name="memberusername"  />
+					 <input hidden type="text" required name="projectname" value={{projectname}}></input>
+					 <input hidden type="text" required name="projecturl" value={{projecturl}}></input>
+                     <button id= "madd">ADD</button>
+
+                 </form>
+             </div> 
+
+			 <div  class="uploadarea" id="upload">
+				 <form  action="/upload" method="POST" enctype="multipart/form-data">
+					 <label class="doc">Document: <input  name="file" required type="file" multiple/></label>
+					  <input hidden type="text" required name="projectname" value={{projectname}}></input>
+					 <input hidden type="text" required name="projecturl" value={{projecturl}}></input>
+					 </br>
+					
+					 </br>
+					<input type="submit" value="Upload"/>
+					 </form>
+
+			 </div>
+			 
+
+					 {{/if}}
+		
+		<div id="image" class="slide">
+          <img src="./Images/select.svg" alt="" class="slideimg img3">
+        </div>
+		 
+</div>
+</div>
+<a href="/projects" hidden id="link"></a>
+<script>
+	var addm = document.getElementById("add");
+	addm.style.display = "none";
+	var mem = document.getElementById("members");
+	mem.style.display = "none";
+	if(members.length==0)
+	{
+		
+	}	
+	else
+	{
+		var img = document.getElementById('image');
+        img.style.visibility = 'hidden';
+	}
+	function hideall()
+	{
+		document.getElementById("members").style.display = "none";
+		document.getElementById("add").style.display = "none";
+		document.getElementById("upload").style.display = "none";
+		document.getElementById("docs").style.display = "none";
+		document.getElementById("more").style.display = "none";
+	}
+	hideall();
+	function documents()
+	{
+		hideall();
+		document.getElementById("docs").style.display = "flex";
+	}
+	function more()
+	{
+				hideall();
+				document.getElementById("more").style.display  = "flex";
+			
+}
+	function addmember()
+	{
+		hideall();
+		document.getElementById("add").style.display = "flex";
+	
+	}
+	function upload()
+	{
+				hideall();
+		document.getElementById("upload").style.display = "flex";
+	}
+	
+	function pending()
+	{
+		hideall();
+
+	addm.style.display = "flex";
+	}
+	function showmembers()
+	{
+		hideall();
+	var memb = document.getElementById("members");
+	memb.style.display = "flex";
+	memb.style.flexDirection="column";
+	}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+html,body{
+    background: #00af66;
+    height:100%;
+    background: radial-gradient(ellipse at  top , #1480c9  0%,#051363 60%),  no-repeat 0 0 / cover;
+      color: #fff;
+      background-attachment: fixed; 
+  background-size: cover;
+  display: grid;
+  }
+  
+  
+  a {
+    text-decoration: none;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    transition: all .25s ease;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    letter-spacing: 0.5mm;
+    margin-top: 8px;
+    
+  }
+  
+  
+  ul.clean,ul.inline {
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+    display: inline-block;
+    display: inline;
+  }
+  
+  ul.ilb li {
+    display: inline-block;
+    vertical-align: top; }
+  
+  body {
+    min-width: 320px;
+    font-size: 16px;
+    font-family: "Campton", Arial, Verdana, sans-serif;
+    overflow-x: hidden;
+    
+      }
+  
+  .inner {
+    padding: 0 24px;
+    margin: 0 auto;
+    max-width: 920px;
+    display: block;
+    position: relative;
+    z-index: 10; }
+  
+  .inner.skinny {
+    max-width: 760px; }
+  
+  .inner.mid-skinny {
+    max-width: 700px; }
+  
+  .inner.wide {
+    max-width: 1048px; }
+  
+  .inner.vwide {
+    max-width: 1400px; }
+  
+  .inner.vskinny {
+    max-width: 488px; }
+  
+  header {
+    height: 5px;
+    text-align: center;
+   }
+  
+  a.logo {
+    width: 200px;
+    display: block;
+    margin: 0 auto; }
+  
+  ul.nav {
+    position: absolute;
+    top: 0;
+    z-index: 100; }
+  
+  ul.nav-left {
+    right: 50%;
+    margin-right: 250px; 
+  margin-left: 200px;}
+  
+  ul.nav-right {
+    left: 50%;
+    margin-left: 250px; }
+  
+  ul.nav a {
+    display: block;
+    line-height: 100px;
+    margin-left: 60px;
+    color: #25282a; }
+  
+  ul.nav a span {
+    position: relative; }
+  
+  ul.nav a span:before {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    background: #00af66;
+    transition: all .50s ease; }
+  
+  ul.nav a:hover span:before,
+  ul.nav li#current a span:before {
+    width: 100%; }
+  
+  ul.nav li:first-child a {
+    margin-left: 0; }
+  
+  .page-template-homepage ul.nav a {
+    color: #fff; }
+  
+  .page-template-homepage ul.nav a span:before {
+    background: #fff; }
+
+  .slideimg
+  {
+    margin: auto;
+    margin-top: 7%;
+    width: 600px;
+    height: 400px;
+  }
+  
+  .container {
+    width: 850px;
+    height: 520px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    margin: auto;
+    vertical-align: top;
+    margin-top: 50px;
+  }
+  
+  .container:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+    filter: blur(75px);
+    margin: -20px;
+  }
+
+  #name
+  {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  #username
+  {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+   margin-top: -27px;
+margin-left: 140px;  }
+
+  .material-icons {
+    margin-top: 10px;
+    vertical-align: top;
+    }
+    .material-icons.badge {
+      font-size: 50px;
+      margin-left: 47%;
+text-align: center;
+    }
+    .material-icons.id {
+      font-size: 30px;
+      margin-left: 10%;
+    }
+
+    .material-icons.key {
+      font-size: 30px;
+      margin-left: 10%;
+    }
+    #area
+    {
+      margin-left: 140px;
+      margin-top: 20px;
+      margin-top: -20px;
+      font-family: 'Varela Round', sans-serif; 
+font-size: 12px; 
+background: rgba(255, 255, 255, 0.295);
+color: white;
+border-style: solid 2px; 
+border-radius: 5px;
+overflow: hidden;
+    }

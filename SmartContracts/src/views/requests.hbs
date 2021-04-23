@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Requests</title>
+<link rel="stylesheet" type="text/css" media="all" href="./css/requestsstyle.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="home page-template page-template-homepage page-template-homepage-php page page-id-10">
+
+
+<header id="top" class="green-bg">
+	<div class="inner vwide center medium">
+		<ul class="nav nav-left clean ilb">
+			<li class="cnproject">
+	<a href="/dashboard">
+		
+		<span>Home</span>
+	</a>
+</li><li class="projects">
+	<a href="/projects">
+		<span>Projects</span>
+	</a>
+</li>	</ul>
+		<a class="logo" >
+						<img src="./Images/logo.svg" alt="LOGO" class="full" />
+					</a>
+		<ul class="nav nav-right clean ilb">
+	<li class="faq-nav">
+	<a href="/requests">
+		<span>Requests</span>
+	</a>
+</li><li class="login-nav">
+	<a href="/profile">
+		<span>Profile</span>
+		
+	</a>
+</li>	</ul>
+		
+		
+	</div>
+</header>
+
+
+	<div class="enrplist">  
+					  {{#each requests}}
+{{#if this.pending }} 
+	{{#if this.addmember }} 
+	<div class="container">	
+		<span class="material-icons member ">groups</span>
+		<p class="ntext"> {{this.requestorname}} has invited you to join {{this.projectname}} project </p>
+		<div class="section"><a href="/requests?task=accept&projecturl={{projecturl}}&projectname={{projectname}}" class="select"><span class="material-icons select ">add_task</span></a></div>
+			<div class="section"><a href="/requests?task=reject&projecturl={{projecturl}}&projectname={{projectname}}" class="reject"><span class="material-icons reject ">highlight_off</span></a></div>
+</div>
+
+{{/if}}
+
+{{#if this.verify }} 
+	<div class="container key">	
+		<span class="material-icons archive">archive</span>
+		<p class="ntext ver"> {{this.requestorname}} requested you to verify a file in  {{this.projectname}} project </p>
+		<div class="section"><a href="/requests?task=accept&projecturl={{projecturl}}&projectname={{projectname}}&fileurl={{this.file}}" class="select"><span class="material-icons select ">add_task</span></a></div>
+			<div class="section"><a href="/requests?task=reject&projecturl={{projecturl}}&projectname={{projectname}}&fileurl={{this.file}}" class="reject"><span class="material-icons reject ">highlight_off</span></a></div>
+
+<form class="download" action="/download" method="POST" enctype="multipart/form-data">
+					 <label class="doc">Key: <input  name="file" required type="file" multiple/></label>
+					  <input hidden type="text" required name="projectname" value={{projectname}}></input>
+					 <input hidden type="text" required name="projecturl" value={{projecturl}}></input>
+					  <input hidden type="text" required name="fileurl" value={{this.file}}></input>
+					<input type="submit" value="Download"/>
+					 </form>
+</div>		
+{{/if}}
+{{/if}}
+					  {{/each}}
+                     		 
+
+</div>
+
+</body>
+</html>
